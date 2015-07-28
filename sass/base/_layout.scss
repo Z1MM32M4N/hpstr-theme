@@ -161,6 +161,27 @@ body {
 	}
 }
 
+// Github Ribbon
+.github-ribbon {
+	margin-right: -15px;
+	margin-top:  -10px;
+	#post-index article & {
+		margin-top:  -25px;
+	}
+	@media #{$medium} {
+		margin-right: -30px;
+		margin-top:  -20px;
+		#post-index article & {
+			margin-top:  -30px;
+		}
+	}
+	@media #{$large} {
+		margin-right: -80px;
+		margin-top:  -50px;
+	}
+	float: right;
+}
+
 // Footer
 // --------------------------------------------------
 .footer-wrapper {
