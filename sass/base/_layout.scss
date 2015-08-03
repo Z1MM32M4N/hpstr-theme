@@ -158,6 +158,49 @@ body {
 			margin-bottom: 30px;
 			padding: 50px 80px;
 		}
+
+
+		&.yearly-index {
+			h2 {
+				text-align: right;
+				padding-bottom: 20px;
+			}
+			.yearly {
+				display: table;
+				table-layout: fixed;
+				width: 100%;
+
+				h1 {
+					display: table-row;
+					a {
+						display: table-cell;
+						vertical-align: top;
+						width: 70%;
+						font-size: 20px;
+						padding-bottom: 40px;
+						@media #{$large} {
+							font-size: 28px;
+						}
+					}
+					time {
+						display: table-cell;
+						font-size: 18px;
+						font-weight: 100;
+						vertical-align: top;
+						width: 120px;
+						white-space: nowrap;
+						text-align: right;
+						line-height: 33px;
+						padding-bottom: 40px;
+						@media #{$large} {
+							font-size: 24px;
+						}
+					}
+				}
+
+
+			}
+		}
 	}
 }
 

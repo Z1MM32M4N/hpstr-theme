@@ -1,18 +1,28 @@
 ---
-layout: page
-title: Blog Archive
+layout: post-index
+title: Archives
 footer: false
 ---
 
-<div id="blog-archives">
 {% for post in site.posts reverse %}
-{% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
-{% unless year == this_year %}
-  {% assign year = this_year %}
-  <h2>{{ year }}</h2>
-{% endunless %}
-<article>
-  {% include archive_post.html %}
-</article>
+    {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+
+    {% unless year == this_year %}
+      {% if did_open %}
+          </div>
+        </article>
+      {% endif %}
+
+      {% assign year = this_year %}
+      {% assign did_open = true %}
+
+      <article id="blog-archives" class="yearly-index">
+        <h2>{{ year }}</h2>
+        <div class="yearly">
+    {% endunless %}
+
+      <h1><a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a>
+      <time datetime="{{ post.date | datetime | date_to_xmlschema }}" pubdate>{{ post.date | date: "<span class='month'>%b</span> <span class='day'>%d</span>"}}</time>
+      </h1>
+
 {% endfor %}
-</div>
